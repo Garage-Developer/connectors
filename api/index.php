@@ -94,12 +94,13 @@ $c_data = $myObject["data"];
   data-show-multi-sort="true"
   data-id-table="advancedTable"
   data-mobile-responsive="true"
+  data-sort-priority='[{"sortName": "id","sortOrder":"desc"}]'
   data-check-on-init="true"> 
  
     <thead>
       <tr>
       	<th> Logos </th>
-        <th> Connector id </th>
+        <th data-field="id" data-sortable="true"> Connector id </th>
         <th> Connector Name </th> 
         <th> Connector Method </th>                
       </tr>
