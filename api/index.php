@@ -52,9 +52,9 @@ curl_setopt($curl1, CURLOPT_SSL_VERIFYPEER, false);
 $resp1 = curl_exec($curl1);
 curl_close($curl1);
 
-echo '<pre>';
-echo json_encode($resp1, JSON_PRETTY_PRINT);
-echo '</pre>';
+$myObject = json_decode($resp1, true);
+$c_data = $myObject["data"];
+
 
 ////
 
@@ -94,15 +94,19 @@ echo '</pre>';
  
     <thead>
       <tr>
-        <th> Connector Name </th>
+        <th> Connector id </th>
+        <th> Connector Name </th>        
       </tr>
     </thead>
     <tbody>
-    	<tr>
-    		<td> CC </td>
-    	</tr>
+      <?php foreach($c_data as $key => $item): ?>
+      	<tr>      
+    	  <td><?PHP echo $item["id"]; ?></td>
+    	  <td><?PHP echo $item["institution"]["name"]; ?></td>
+        </tr>
+      <?php endforeach; ?>
     </tbody>
-  </table>
+  </table>  </table>
 </div>
 
 
