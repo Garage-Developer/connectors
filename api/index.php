@@ -91,6 +91,7 @@ $c_data = $myObject["data"];
   data-show-columns="true"
   data-pagination="true"
   data-search="true"
+  data-filter-control="true"
   data-advanced-search="true"
   data-id-table="advancedTable"
   data-mobile-responsive="true"
