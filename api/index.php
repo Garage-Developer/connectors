@@ -92,6 +92,7 @@ $c_data = $myObject["data"];
   data-search="true"
   data-filter-control="true"
   data-show-multi-sort="true"
+  data-advanced-search="true"
   data-id-table="advancedTable"
   data-mobile-responsive="true"
   data-sort-priority='[{"sortName": "name","sortOrder":"aesc"}]'
