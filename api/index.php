@@ -26,35 +26,35 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
-// //Print the array in a simple JSON format
-// echo '<pre>';
-// echo json_encode($server_token, JSON_PRETTY_PRINT);
-// echo '</pre>';
+//Print the array in a simple JSON format
+echo '<pre>';
+echo json_encode($server_token, JSON_PRETTY_PRINT);
+echo '</pre>';
+
+/////
 
 
-$curly = curl_init();
+$url1 = "https://au-api.basiq.io/connectors";
 
-curl_setopt_array($curly, array(
-  CURLOPT_URL => 'https://au-api.basiq.io/connectors',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'GET',
-  CURLOPT_HTTPHEADER => array(
-    'Authorization: Bearer $server_obj->access_token',
-    'Accept: application/json'
-  ),
-));
+$curl1 = curl_init($url1);
+curl_setopt($curl1, CURLOPT_URL, $url1);
+curl_setopt($curl1, CURLOPT_RETURNTRANSFER, true);
 
-$responsy = curl_exec($curly);
+$headers1 = array(
+   "Authorization: Bearer $server_obj->access_token",
+   "Accept: application/json",
+);
+curl_setopt($curl1, CURLOPT_HTTPHEADER, $headers1);
+//for debug only!
+curl_setopt($curl1, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl1, CURLOPT_SSL_VERIFYPEER, false);
 
-curl_close($curly);
-echo $responsy;
-exit ();
-exit;
+$resp1 = curl_exec($curl1);
+curl_close($curl1);
+var_dump($resp1);
 
+
+
+////
 
 ?>
