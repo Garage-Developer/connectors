@@ -17,6 +17,9 @@ $headers = array(
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $server_token = curl_exec($curl);
 curl_close($curl);
@@ -29,7 +32,7 @@ $server_obj = json_decode( $server_token );
 // echo '</pre>';
 
 
-// Calling connectors EP 
+// Calling user EP to generate a user using token. 
 
 $urls = "https://au-api.basiq.io/connectors";
 
@@ -44,8 +47,16 @@ $headerss = array(
 );
 curl_setopt($curls, CURLOPT_HTTPHEADER, $headerss);
 
-curl_setopt($curls, CURLOPT_POSTFIELDS, $datas);
+//$datas = '{"email": '.json_encode($email).'}';
+// .', "mobile": '.json_encode($mobile)
+// var_dump($datas);
 
+
+//curl_setopt($curls, CURLOPT_POSTFIELDS, $datas);
+
+//for debug only!
+curl_setopt($curls, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curls, CURLOPT_SSL_VERIFYPEER, false);
 
 $resps = curl_exec($curls);
 curl_close($curls);
