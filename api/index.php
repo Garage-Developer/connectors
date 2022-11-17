@@ -32,40 +32,29 @@ $server_obj = json_decode( $server_token );
 // echo '</pre>';
 
 
-// Calling user EP to generate a user using token. 
+$curly = curl_init();
 
-$urls = "https://au-api.basiq.io/connectors";
+curl_setopt_array($curly, array(
+  CURLOPT_URL => 'https://au-api.basiq.io/connectors',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: Bearer $server_obj->access_token',
+    'Accept: application/json'
+  ),
+));
 
-$curls = curl_init($urls);
-curl_setopt($curls, CURLOPT_URL, $urls);
-curl_setopt($curls, CURLOPT_POST, true);
-curl_setopt($curls, CURLOPT_RETURNTRANSFER, true);
+$responsy = curl_exec($curly);
 
-$headerss = array(
-   "Authorization: Bearer $server_obj->access_token",
-   "Content-Type: application/json",
-);
-curl_setopt($curls, CURLOPT_HTTPHEADER, $headerss);
-
-//$datas = '{"email": '.json_encode($email).'}';
-// .', "mobile": '.json_encode($mobile)
-// var_dump($datas);
-
-
-//curl_setopt($curls, CURLOPT_POSTFIELDS, $datas);
-
-//for debug only!
-curl_setopt($curls, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curls, CURLOPT_SSL_VERIFYPEER, false);
-
-$resps = curl_exec($curls);
-curl_close($curls);
-
-$user_object = json_decode( $resps );
-
-var_dump($user_object);
-exit();
-exit; 
+curl_close($curly);
+echo $responsy;
+exit ();
+exit;
 
 
 ?>
