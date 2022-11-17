@@ -103,7 +103,7 @@ $c_data = $myObject["data"];
     <tbody>
       <?php foreach($c_data as $key => $item): ?>
       	<tr>  
-      	  <td> <img src="<?php echo $item["logo"]["links"]["square"]; ?>" style="width:50px;" ></td>    
+      	  <td> <img src="<?php echo $item["institution"]["logo"]["links"]["square"]; ?>" style="width:50px;" ></td>    
     	  <td><?PHP echo $item["id"]; ?></td>
     	  <td><?PHP echo $item["institution"]["name"]; ?></td>
     	  <td><?PHP echo $item["method"]; ?></td>
