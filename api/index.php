@@ -59,3 +59,64 @@ echo '</pre>';
 ////
 
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Connectors </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
+
+
+</head>
+<body>
+
+
+
+<div class="container"> 
+ 
+ <table
+  id="myTable"
+  data-show-columns="true"
+  data-search="true"
+  data-mobile-responsive="true"
+  data-check-on-init="true"> 
+ 
+    <thead>
+      <tr>
+        <th> Connector Name </th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<td> CC </td>
+    	</tr>
+    </tbody>
+  </table>
+</div>
+
+
+<script>
+
+  $(function() {
+    $('#myTable').bootstrapTable()
+  })
+
+</script>
+
+</body>
+</html>
+
+
+
+<!---->
