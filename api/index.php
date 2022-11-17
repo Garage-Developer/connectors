@@ -26,10 +26,10 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
-//Print the array in a simple JSON format
-echo '<pre>';
-echo json_encode($server_token, JSON_PRETTY_PRINT);
-echo '</pre>';
+// //Print the array in a simple JSON format
+// echo '<pre>';
+// echo json_encode($server_token, JSON_PRETTY_PRINT);
+// echo '</pre>';
 
 /////
 
@@ -51,9 +51,10 @@ curl_setopt($curl1, CURLOPT_SSL_VERIFYPEER, false);
 
 $resp1 = curl_exec($curl1);
 curl_close($curl1);
-var_dump($resp1);
 
-
+echo '<pre>';
+echo json_encode($resp1, JSON_PRETTY_PRINT);
+echo '</pre>';
 
 ////
 
