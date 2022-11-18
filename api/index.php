@@ -77,6 +77,8 @@ $c_data = $myObject["data"];
 <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/extensions/multiple-sort/bootstrap-table-multiple-sort.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.21.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
 
 
 </head>
@@ -88,6 +90,7 @@ $c_data = $myObject["data"];
  
  <table
   id="myTable"
+  data-show-export="true"
   data-show-columns="true"
   data-pagination="true"
   data-search="true"
@@ -104,7 +107,7 @@ $c_data = $myObject["data"];
       	<th> Logos </th>
         <th data-field="id" data-sortable="true"> Connector id </th>
         <th data-field="name" data-sortable="true"> Connector Name </th> 
-        <th> Connector Method </th>                
+        <th data-field="method"> Connector Method </th>                
       </tr>
     </thead>
     <tbody>
