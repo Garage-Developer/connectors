@@ -130,7 +130,9 @@ $c_data = $myObject["data"];
 <script>
 
   $(function() {
-    $('#myTable').bootstrapTable()
+    $('#myTable').bootstrapTable({
+      "pageLength": 500
+    })
   })
 
 </script>
