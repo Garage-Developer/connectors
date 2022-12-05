@@ -123,9 +123,9 @@ $c_data = $myObject["data"];
       	  <td> <img src="<?php echo $item["institution"]["logo"]["links"]["square"]; ?>" style="width:50px;" ></td>    
     	  <td><?php echo $item["id"]; ?></td>
     	  <td><?php echo $item["institution"]["name"]; ?></td>
-    	  <td><?php if ($item["method"] == 'web' || $item["method"] == 'open-banking') { echo $item["method"] } ; ?></td>
+    	  <td><?php echo $item["method"]; ?></td>
         <td><?php echo $item["institution"]["country"]; ?></td>
-        <td><?php if ($item["method"] == 'web' || $item["method"] == 'open-banking') { echo $item["method"] } ; ?></td>
+        <td><?php if ($item["method"] == 'web') { echo $item["method"]; } ?></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
