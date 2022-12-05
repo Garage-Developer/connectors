@@ -56,6 +56,9 @@ $myObject = json_decode($resp1, true);
 $c_data = $myObject["data"];
 
 
+print_r(array_unique($c_data));
+
+
 ////
 
 ?>
