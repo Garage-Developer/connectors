@@ -95,7 +95,6 @@ $c_data = $myObject["data"];
   id="myTable"
   data-show-export="true"
   data-show-columns="true"
-  data-pagination="true"
   data-search="true"
   data-filter-control="true"
   data-show-multi-sort="true"
@@ -130,9 +129,7 @@ $c_data = $myObject["data"];
 <script>
 
   $(function() {
-    $('#myTable').bootstrapTable({
-      "pageLength": 500
-    })
+    $('#myTable').bootstrapTable()
   })
 
 </script>
