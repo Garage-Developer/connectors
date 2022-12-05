@@ -126,6 +126,7 @@ $c_data = $myObject["data"];
     	  <td><?php echo $item["method"]; ?></td>
         <td><?php echo $item["institution"]["country"]; ?></td>
         <td><?php if ($item["method"] == 'web') { echo $item["method"]; } ?></td>
+        <td><?php if ($item["method"] == 'open-banking') { echo $item["method"]; } ?></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
