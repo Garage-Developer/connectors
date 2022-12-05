@@ -34,7 +34,7 @@ $server_obj = json_decode( $server_token );
 /////
 
 
-$url1 = "https://au-api.basiq.io/connectors?filter=connector.stage.ne('alpha'),connector.authorization.type.in('other','user','user-mfa','user-mfa-intermittent','token')";
+$url1 = "https://au-api.basiq.io/connectors?filter=connector.stage.ne('alpha'),connector.authorization.type.in('other','user','user-mfa','user-mfa-intermittent','token'),connector.method.eq('web'||'open-banking')";
 
 $curl1 = curl_init($url1);
 curl_setopt($curl1, CURLOPT_URL, $url1);
@@ -111,7 +111,6 @@ $c_data = $myObject["data"];
       	<th> Logos </th>
         <th data-field="id" data-sortable="true"> Connector id </th>
         <th data-field="name" data-sortable="true"> Connector Name </th> 
-        <th data-field="method"> Connector Method </th>     
         <th data-field="region"> Connector Region </th>  
         <th data-field="web"> Web </th>  
         <th data-field="openbanking"> OpenBanking </th>  
@@ -123,8 +122,7 @@ $c_data = $myObject["data"];
       	  <td> <img src="<?php echo $item["institution"]["logo"]["links"]["square"]; ?>" style="width:50px;" ></td>    
     	  <td><?php echo $item["id"]; ?></td>
     	  <td><?php echo $item["institution"]["name"]; ?></td>
-    	  <td><?php echo $item["method"]; ?></td>
-        <td><?php echo $item["institution"]["country"]; ?></td>
+    	  <td><?php echo $item["institution"]["country"]; ?></td>
         <td><?php if ($item["method"] == 'web') { echo $item["method"]; } ?></td>
         <td><?php if ($item["method"] == 'open-banking') { echo $item["method"]; } ?></td>
         </tr>
