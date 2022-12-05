@@ -34,7 +34,7 @@ $server_obj = json_decode( $server_token );
 /////
 
 
-$url1 = "https://au-api.basiq.io/connectors";
+$url1 = "https://au-api.basiq.io/connectors?filter=connector.stage.ne('alpha'),connector.authorization.type.in('other','user','user-mfa','user-mfa-intermittent','token')";
 
 $curl1 = curl_init($url1);
 curl_setopt($curl1, CURLOPT_URL, $url1);
