@@ -56,10 +56,7 @@ $myObject = json_decode($resp1, true);
 $c_data = $myObject["data"];
 
 
-// //Print the array in a simple JSON format
-echo '<pre>';
-echo json_encode($c_data, JSON_PRETTY_PRINT);
-echo '</pre>';
+
 
 ////
 
@@ -114,7 +111,10 @@ echo '</pre>';
       	<th> Logos </th>
         <th data-field="id" data-sortable="true"> Connector id </th>
         <th data-field="name" data-sortable="true"> Connector Name </th> 
-        <th data-field="method"> Connector Method </th>                
+        <th data-field="method"> Connector Method </th>     
+        <th data-field="region"> Connector Region </th>  
+        <th data-field="web"> Web </th>  
+        <th data-field="openbanking"> OpenBanking </th>  
       </tr>
     </thead>
     <tbody>
@@ -123,7 +123,9 @@ echo '</pre>';
       	  <td> <img src="<?php echo $item["institution"]["logo"]["links"]["square"]; ?>" style="width:50px;" ></td>    
     	  <td><?PHP echo $item["id"]; ?></td>
     	  <td><?PHP echo $item["institution"]["name"]; ?></td>
-    	  <td><?PHP echo $item["method"]; ?></td>
+    	  <td><?PHP if ($item["method"] == 'web' || $item["method"] == 'open-banking') { echo $item["method"] } ; ?></td>
+        <td><?PHP echo $item["institution"]["country"]; ?></td>
+        <td><?PHP if ($item["method"] == 'web' || $item["method"] == 'open-banking') { echo $item["method"] } ; ?></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
