@@ -56,8 +56,10 @@ $myObject = json_decode($resp1, true);
 $c_data = $myObject["data"];
 
 
-print_r(array_unique($c_data));
-
+// //Print the array in a simple JSON format
+echo '<pre>';
+echo json_encode($c_data, JSON_PRETTY_PRINT);
+echo '</pre>';
 
 ////
 
