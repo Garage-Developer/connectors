@@ -55,12 +55,9 @@ curl_close($curl1);
 $myObject = json_decode($resp1, true);
 $c_data = $myObject["data"];
 
-
-echo '<pre>';
-echo json_encode($c_data, JSON_PRETTY_PRINT);
-echo '</pre>';
-
-////
+// echo '<pre>';
+// echo json_encode($c_data, JSON_PRETTY_PRINT);
+// echo '</pre>';
 
 ?>
 
